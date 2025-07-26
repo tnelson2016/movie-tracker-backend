@@ -1,6 +1,4 @@
-
-
-package com.example.movie_tracker.config;  // Adjust to match your project structure
+package com.example.movie_tracker.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +13,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping(("/api/**"))
-                        .allowedOrigins("http://localhost:3000")
+                registry.addMapping("/api/**")
+                        .allowedOrigins(
+                                "http://localhost:3000",
+                                "https://movie-tracker-front-end.vercel.app"
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*");
             }
