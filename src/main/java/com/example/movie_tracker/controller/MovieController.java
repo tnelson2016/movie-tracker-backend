@@ -66,4 +66,13 @@ public class MovieController {
     public void deleteMovie(@PathVariable Long id){
         movieRepository.deleteById(id);
   }
+
+
+    @GetMapping("/test")
+    public String testEndpoint() {
+        return "✅ Backend is working!";
+    }
+
 }
+
+
