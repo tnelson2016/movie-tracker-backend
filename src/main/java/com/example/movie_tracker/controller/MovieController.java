@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = {
-
+        "http://localhost:3000",
+        "https://movie-tracker-front-end.vercel.app"
 })
 
 @RestController
